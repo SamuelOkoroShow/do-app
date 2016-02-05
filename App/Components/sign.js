@@ -12,7 +12,7 @@ import React, {
 }
 from 'react-native';
 
-class Login extends Component {
+class Sign extends Component {
     constructor() {
         super();
         console.log('whors');
@@ -67,7 +67,7 @@ class Login extends Component {
                 
                 </View>
     <View style={styles.rowtouch}>
-                
+                <Image source={require('image!done')} resizeMode={'contain'} style={styles.done} />
                 </View>
     
                 </View>
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
     },rowtouch: {
         flex: 1,
         flexDirection: 'column',
-      
+        alignItems:'center',
+        justifyContent:'center',
         backgroundColor:'#6563A4', 
         justifyContent:'center',
         alignItems:'center'
@@ -128,6 +129,9 @@ const styles = StyleSheet.create({
     avatar:{
     width:100,
     },
+    done:{
+    width:30,
+    },
 
     sign: {
         alignSelf: 'center',
@@ -138,4 +142,4 @@ const styles = StyleSheet.create({
 
     }
 });
-module.exports = Login;
+module.exports = Sign;

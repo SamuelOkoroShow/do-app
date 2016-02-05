@@ -2,7 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-var Login =  require("./App/Components/sign");
+var Login =  require("./App/Components/dash");
 
 'use strict';
 import React, {
