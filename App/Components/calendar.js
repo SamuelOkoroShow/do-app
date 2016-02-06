@@ -26,25 +26,23 @@ class Walk extends Component {
   render() {
     
 return (
-     <Calendar
+     <View style={styles.container}><Calendar
           ref="calendar"
-          eventDates={['2015-07-03', '2015-07-05', '2015-07-10', '2015-07-15', '2015-07-20', '2015-07-25', '2015-07-28', '2015-07-30']}
+         
           showControls={true}
-            style={{backgroundColor:'#6664A5'}}
           dayHeadings={customDayHeadings}
           titleFormat={'MMMM YYYY'}
-          prevButtonText={'Prev'}
-          nextButtonText={'Next'}
+         
           onDateSelect={(date) => this.setState({selectedDate: date})}
           onTouchPrev={() => console.log('Back TOUCH')}
           onTouchNext={() => console.log('Forward TOUCH')}
           
           customStyle={{day: {fontSize: 12, textAlign: 'center', color:'#fff',  }, 
-              dayCircleFiller:{ borderRadius:0, padding:0, height:40, width:40}, weekRow:{backgroundColor:'#6664A5',flex:1, padding:0 }, selectedDayCircle:{backgroundColor:'#52CFC7', padding:0},
-                  calendarHeading:{backgroundColor:'#6664A5', borderBottomWidth:1, borderBottomColor:'#6D6BAC', padding:7, }, 
+              dayCircleFiller:{ borderRadius:0, padding:0, height:45, width:45}, weekRow:{backgroundColor:'#6664A5',flex:1, padding:0 }, selectedDayCircle:{backgroundColor:'#52CFC7', padding:0},
+                  calendarHeading:{backgroundColor:'#6664A5', borderBottomWidth:1,borderTopWidth:0, borderBottomColor:'#6D6BAC', padding:7, }, 
                       currentDayCircle:{ backgroundColor:'#52CFC7'}, 
               currentDayText:{padding:0,color:'#fff', fontSize:15, fontWeight:'600'},eventIndicatorFiller:{backgroundColor:'#fff', height:0}, dayButton:{borderBottomWidth:0, borderTopWidth:1,borderTopColor:'#6D6BAC', padding:0, margin:0}, dayHeading:{color:'#fff', fontSize:13}}}  
-          />
+          /></View>
     );
  
 
@@ -54,6 +52,7 @@ return (
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingTop:20
  
     },
     walk:{
