@@ -9,7 +9,8 @@ import React, {
     Text,
     TextInput,
     TouchableWithoutFeedback,
-    View
+    View,
+    ScrollView
 }
 from 'react-native';
 var Calendar = require('react-native-calendar');
@@ -51,16 +52,49 @@ return (
               dayCircleFiller:{ borderRadius:0, padding:0, height:45, width:45}, weekRow:{backgroundColor:'#6664A5',flex:1, padding:0 }, selectedDayCircle:{backgroundColor:'#52CFC7', padding:0},
                   calendarHeading:{backgroundColor:'#6664A5', borderBottomWidth:1,borderTopWidth:0, borderBottomColor:'#6D6BAC', padding:7, }, 
                       currentDayCircle:{ backgroundColor:'#52CFC7'}, 
-              currentDayText:{padding:0,color:'#fff', fontSize:15, fontWeight:'600'},eventIndicatorFiller:{backgroundColor:'#fff', height:0}, dayButton:{borderBottomWidth:0, borderTopWidth:1,borderTopColor:'#6D6BAC', padding:0, margin:0}, dayHeading:{color:'#fff', fontSize:13},title:{height:0},calendarContainer:{backgroundColor:'#fff'}}}  
+              currentDayText:{padding:0,color:'#fff', fontSize:15, fontWeight:'600'},eventIndicatorFiller:{backgroundColor:'#fff', height:0}, dayButton:{borderBottomWidth:0, borderTopWidth:1,borderTopColor:'#6D6BAC', padding:0, margin:0}, dayHeading:{color:'#fff', fontSize:13},title:{height:0},calendarContainer:{backgroundColor:'#fff'}}}
           />
               </View>
-           <View style={styles.row3}>
-               <View style={styles.row1}></View>
-               <View style={styles.row1}></View>
-               <View style={styles.row1}></View>
+          <View style={styles.row3}>
+           <ScrollView 
+          automaticallyAdjustContentInsets={false}
+          style={styles.rowScroll}>
+               <View style={styles.rowz}>
+                   <View style={{flexDirection:'row'}}><Text style={{fontSize:18, color:'#454449', margin:25, marginRight:3, alignSelf:'center'}}>8:30</Text>
+                       <Text style={{fontWeight:'100', color:'#454449', fontSize:11, alignSelf:'center',marginTop:5}}>AM</Text></View>
+                   <View>
+                           <Text style={{fontSize:16, color:'#454449', margin:25, marginTop:28,marginBottom:3, alignSelf:'center'}}>New Icons</Text>
+                           <Text style={{fontSize:16,color:'#A7A7A7', margin:25, marginTop:0, alignSelf:'center'}}>Mobile App</Text>
+                           </View>
+                   <View style={{flexDirection:'row',}}><Image source={require('image!green')} resizeMode={'contain'} style={{width:10, alignSelf:'center', margin:25,}}/>
+                               </View>
+                   </View>
+               <View style={styles.rowz}>
+                   <View style={{flexDirection:'row'}}><Text style={{fontSize:18, color:'#454449', margin:25, marginRight:3, alignSelf:'center'}}>11:00</Text>
+                       <Text style={{fontWeight:'100', color:'#454449', fontSize:11, alignSelf:'center',marginTop:5}}>AM</Text></View>
+                   <View>
+                           <Text style={{fontSize:16, color:'#454449', margin:25, marginTop:28,marginBottom:3, alignSelf:'center'}}>New Icons</Text>
+                           <Text style={{fontSize:16,color:'#A7A7A7', margin:25, marginTop:0, alignSelf:'center'}}>Mobile App</Text>
+                           </View>
+                   <View style={{flexDirection:'row',}}><Image source={require('image!purple')} resizeMode={'contain'} style={{width:10, alignSelf:'center', margin:25,}}/>
+                               </View>
+                   </View>
+               <View style={styles.rowz}>
+                   <View style={{flexDirection:'row'}}><Text style={{fontSize:18, color:'#454449', margin:25, marginRight:3, alignSelf:'center'}}>2:30</Text>
+                       <Text style={{fontWeight:'100', color:'#454449', fontSize:11, alignSelf:'center',marginTop:5}}>PM</Text></View>
+                   <View>
+                           <Text style={{fontSize:16, color:'#454449', margin:25, marginTop:28,marginBottom:3, alignSelf:'center'}}>New Icons</Text>
+                           <Text style={{fontSize:16,color:'#A7A7A7', margin:25, marginTop:0, alignSelf:'center'}}>Mobile App</Text>
+                           </View>
+                   <View style={{flexDirection:'row',}}><Image source={require('image!green')} resizeMode={'contain'} style={{width:10, alignSelf:'center', margin:25,}}/>
+                               </View>
+                   </View>
+                </ScrollView>
                </View>
+                   
+                   </View>
               
-              </View>
+             
     );
  
 
@@ -85,6 +119,13 @@ const styles = StyleSheet.create({
     },
      wrapper: {
   },
+    rowz:{
+     flex:1,
+        flexDirection:'row',
+        borderBottomWidth:1,
+        borderBottomColor:'#f3f3f3',
+        justifyContent: 'space-between',
+    },
   slide1: {
     flex: 1,
     justifyContent: 'center',
@@ -122,14 +163,21 @@ const styles = StyleSheet.create({
     flex:1,
         flexDirection:'row'
         
+    },rowScroll:{
+    flex:1,
+    
+        
     },
     row2:{
     flex:6,
         marginTop:-20,
+        marginBottom:-80,
+        
      
     },
     row3:{
-    flex:5
+    flex:5,
+        
     },
     }
 );
