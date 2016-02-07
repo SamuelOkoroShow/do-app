@@ -2,7 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-var Login =  require("./App/Components/calendar");
+var Login =  require("./App/Components/overview");
 
 'use strict';
 import React, {
