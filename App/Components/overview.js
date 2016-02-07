@@ -14,30 +14,40 @@ from 'react-native';
 
 import Swiper from 'react-native-swiper'
 var ScrollableTabView = require('react-native-scrollable-tab-view');
+var Icon = require('react-native-vector-icons/Ionicons');
+var Login =  require("./dash");
 
-class Walk extends Component {
+
+
+class Overview extends Component {
     constructor() {
         super();
-        console.log('whors');
+        
     }
   render() {
     return (
        <View style={styles.container}>
          
   <View style={styles.title}>
+        <View style={{flexDirection:'row'}}>
         <Image source={require('image!menu')} resizeMode={'contain'} style={styles.menu}/>
+        <Text style={styles.titleTxt}>Overview</Text>
         </View>
-    <Swiper style={styles.wrapper} showsButtons={false}>
-        <View style={styles.slide1}>
-          <Image source={require('image!walk1')} resizeMode={'contain'} style={styles.walk} />
+        <View style={{flexDirection:'row'}}>
+            <Icon name="ios-plus-empty" size={27} color="#999" style={{margin:10, alignSelf:'center'}} /> 
+           <Icon name="ios-search" size={23} color="#999" style={{margin:10, alignSelf:'center'}} /> 
         </View>
-        <View style={styles.slide1}>
-         <Image source={require('image!walk2')} resizeMode={'contain'} style={styles.walk} />
         </View>
-        <View style={styles.slide1}>
-          <Image source={require('image!walk3')} resizeMode={'contain'} style={styles.walk} />
-        </View>
-      </Swiper>
+    
+      <ScrollableTabView 
+           tabBarPosition = "top"
+        style={{color:'#fff', backgroundColor:'#333'}}
+        tabBarInactiveTextColor="white"
+           >
+        <Login tabLabel="Day"   />
+        <Login  tabLabel="Week" tabBarInactiveTextColor="white" />
+        <Login tabLabel="Month" />
+      </ScrollableTabView>
                 </View>
                     
     );
@@ -47,15 +57,23 @@ class Walk extends Component {
         flex: 1,
 
     },
+    titleTxt:{
+    alignSelf:'center',
+        fontSize:16,
+        color:'#3D3C41'
+    },
     title: {
-        height: 70,
+        marginTop:10,
+        height: 60,
         flexDirection: 'row',
-        backgroundColor: '#333'
+        justifyContent:'space-between',
+        borderBottomWidth:1,
+        borderBottomColor:'#f7f7f7'
     },
     menu: {
-        width: 20,
+        width: 15,
         alignSelf: 'center',
-        margin: 10
+        margin: 15
     },
     walk: {
         width: 300
@@ -92,4 +110,4 @@ class Walk extends Component {
         fontWeight: 'bold',
     }
 });
-module.exports = Walk;
+module.exports = Overview;
