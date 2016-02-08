@@ -14,6 +14,7 @@ from 'react-native';
 import Swiper from 'react-native-swiper'
 var Icon = require('react-native-vector-icons/Ionicons');
 var TodoTab = require('./todo');
+var API = require('./../Utils/todoAPI');
 
 class Month extends Component {
     constructor() {
@@ -21,6 +22,7 @@ class Month extends Component {
         console.log('whors');
     }
   render() {
+      API.addTodo("Sam","sfafsaf");
     return (
       
   <View style={styles.container}>
