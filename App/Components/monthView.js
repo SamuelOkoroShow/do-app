@@ -12,6 +12,8 @@ import React, {
 }
 from 'react-native';
 import Swiper from 'react-native-swiper'
+var Icon = require('react-native-vector-icons/Ionicons');
+var TodoTab = require('./todo');
 
 class Month extends Component {
     constructor() {
@@ -20,17 +22,49 @@ class Month extends Component {
     }
   render() {
     return (
-       <Image source={require('image!dashback')} style=
-  <View style={styles.row1}>
-  
-      </View>
-   
-                </Image>
-                    
+      
+  <View style={styles.container}>
+  <View style={{height:80, backgroundColor:'#f3f3f3', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+         <Icon name="ios-arrow-left" size={23} color="#333" style={{margin:15, alignSelf:'center'}} /> 
+        <Text style={{fontSize:18, color:'#333'}}>Februray</Text>
+        <Icon name="ios-arrow-right" size={23} color="#333" style={{margin:15, alignSelf:'center'}} /> 
+        </View>
+        <View style={{height:130, flexDirection:'row', alignItems:'center'}}>
+        <View style={{backgroundColor:'#4FD2C2', flex:1, alignItems:'center'}}>
+        <View style={styles.taskBox}>
+        <Text style={styles.taskText}>COMPLETED</Text>
+        <Text style={styles.taskBig}>64</Text>
+        </View>
+        </View>
+        <View style={{backgroundColor:'#D667CD', flex:1, alignItems:'center'}}>
+        <View style={styles.taskBox}>
+        <Text style={styles.taskText}>OVERVIEW</Text>
+        <Text style={styles.taskBig}>5</Text>
+        </View>
+        </View>
+        
+        </View>
+        
+        <View style={styles.rowz}>
+                   <View style={{flexDirection:'row'}}><Text style={{fontSize:18, color:'#454449', margin:25, marginRight:3, alignSelf:'center'}}>2:30</Text>
+                       <Text style={{fontWeight:'100', color:'#454449', fontSize:11, alignSelf:'center',marginTop:5}}>PM</Text></View>
+                   <View>
+                           <Text style={{fontSize:16, color:'#454449', margin:25,marginBottom:3, alignSelf:'flex-start'}}>New Icons</Text>
+                           <Text style={{fontSize:16,color:'#A7A7A7', margin:25, marginTop:0, alignSelf:'center'}}>Mobile App</Text>
+                           </View>
+                   <View style={{flexDirection:'row',}}><Image source={require('image!green')} resizeMode={'contain'} style={{width:10, alignSelf:'center', margin:25,}}/>
+                               </View>
+                   </View>
+    <TodoTab 
+time ={{value:"HI", surfix:'PM'}}
+title={{main:"", sub:'hhafad'}}
+    
+    />
+       
+      </View>                  
     );
   }
-}
-const styles = StyleSheet.create({
+}const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: null,
@@ -40,21 +74,23 @@ const styles = StyleSheet.create({
         width: 160,
         alignSelf: 'center',
         justifyContent: 'center',
-        flexDirection:'row',
+        flexDirection: 'row',
     },
     temp: {
         backgroundColor: 'rgba(0, 0, 0, 0)',
         marginTop: 25
 
-    }, midTxt: {
+    },
+    midTxt: {
         flex: 3,
-        backgroundColor: 'rgba(0, 0, 0, 0)', 
+        backgroundColor: 'rgba(0, 0, 0, 0)',
         color: '#fff',
         fontSize: 65,
         fontWeight: '300'
-    },midTxtS: {
+    },
+    midTxtS: {
         flex: 3,
-        backgroundColor: 'rgba(0, 0, 0, 0)', 
+        backgroundColor: 'rgba(0, 0, 0, 0)',
         color: '#fff',
         fontSize: 12,
         fontWeight: '200'
@@ -78,12 +114,19 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row'
     },
+       rowz:{
+     height:80,
+        flexDirection:'row',
+        borderBottomWidth:1,
+        borderBottomColor:'#f3f3f3',
+        justifyContent: 'space-between',
+    },
     row2: {
         flex: 8
     },
     row3: {
         flex: 1,
-        alignItems:'center',
+        alignItems: 'center',
         justifyContent: 'flex-start',
     },
 
@@ -92,6 +135,20 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         margin: 20
     },
+    taskText: {
+        color: '#fff',
+        fontSize: 12,
+        fontWeight:'500'
+    },
+    taskBig: {
+        color: '#fff',
+        fontSize: 38
+    },
+    taskBox: {
+        alignItems: 'center',
+        flex: 1,
+        margin:35,
+    }
 
 });
 module.exports = Month;

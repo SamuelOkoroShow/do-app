@@ -62,6 +62,7 @@ class Overview extends Component {
         fontSize:16,
         color:'#3D3C41'
     },
+    
     title: {
         marginTop:10,
         height: 60,
