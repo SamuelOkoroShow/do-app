@@ -15,7 +15,7 @@ from 'react-native';
 import Swiper from 'react-native-swiper'
 var ScrollableTabView = require('react-native-scrollable-tab-view');
 var Icon = require('react-native-vector-icons/Ionicons');
-var Login =  require("./dash");
+var Login =  require("./monthView");
 
 
 
@@ -44,9 +44,9 @@ class Overview extends Component {
         style={{color:'#fff', backgroundColor:'#333'}}
         tabBarInactiveTextColor="white"
            >
-        <Login tabLabel="Day"   />
-        <Login  tabLabel="Week" tabBarInactiveTextColor="white" />
-        <Login tabLabel="Month" />
+        <Login tabLabel="DAY"    />
+        <Login  tabLabel="WEEK" tabBarInactiveTextColor="white" />
+        <Login tabLabel="MONTH" />
       </ScrollableTabView>
                 </View>
                     
