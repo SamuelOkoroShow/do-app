@@ -2,7 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-var Login =  require("./App/Components/overview");
+var Login =  require("./App/Components/groups");
 
 'use strict';
 import React, {
@@ -17,7 +17,7 @@ import React, {
 from 'react-native';
 
 class do_2 extends Component {
-  render() {
+  render(){
     return (
         <NavigatorIOS
          style={styles.container}
