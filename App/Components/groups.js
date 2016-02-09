@@ -27,9 +27,15 @@ var groupData = [
 class Overview extends Component {
     constructor() {
         super();
-        this.
-        
+         this.ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2
+        });
+        this.state = {
+        dataSource: this.ds.cloneWithRows(groupData)
+        }
     }
+        
+    
     render(){
     return(
     <View style={styles.container}>
