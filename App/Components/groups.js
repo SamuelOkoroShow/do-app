@@ -1,17 +1,17 @@
 
 'use strict';
 import React, {
-    AppRegistry,
     Component,
     StyleSheet,
     Image,
     ListView,
     Text,
-    TextInput,
     TouchableWithoutFeedback,
     View
 }
 from 'react-native';
+
+var Nav = require("./Helpers/nav");
 
 var groupData = [
     {
@@ -22,6 +22,14 @@ var groupData = [
         title: 'Work',
         sub: 'FREELANCE PROJECTS',
         image: 'http://unappers.com/chair.jpg'
+    }, {
+        title: 'Vacation',
+        sub: 'FAVORITE PLACES',
+        image: 'http://unappers.com/cali.jpg'
+    }, {
+        title: 'Cities',
+        sub: 'WANT TO VISIT',
+        image: 'http://unappers.com/work.jpg'
     }
 ];
 class Overview extends Component {
@@ -35,11 +43,30 @@ class Overview extends Component {
         }
     }
         
+    rowView(x){
+    return(
+        
+    <View style={{height:140, flexDirection:'row', borderBottomWidth:1, borderBottomColor:'#d3d3d3'}}>
+       <View style={{flex:2, backgroundColor:'#f4f4f4', justifyContent:'center', padding:25}}>
+        <Text style={{fontSize:20, textAlign:'left',}}>{x.title}</Text>
+        <Text style={{color:'#888', fontSize:10}}>{x.sub}</Text>
+        </View>
+       <Image style={{flex:1, width:null, height:null}} 
+        source={{uri: x.image}}
+        />
+        </View>
+    );
+    }
     
     render(){
     return(
     <View style={styles.container}>
-        
+        <Nav />
+        <ListView
+        automaticallyAdjustContentInsets={false}
+        dataSource={this.state.dataSource}
+      renderRow={(rowData) => this.rowView(rowData)}
+    />
         </View>
     );
     }
