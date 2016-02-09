@@ -7,6 +7,7 @@ import React, {
     Image,
     Text,
     TextInput,
+        ListView,
     TouchableWithoutFeedback,
     View
 }
@@ -16,13 +17,81 @@ var Icon = require('react-native-vector-icons/Ionicons');
 var TodoTab = require('./todo');
 var API = require('./../Utils/todoAPI');
 
+
+// This Data would normally be supplied by the API
+
+
+
 class Month extends Component {
-    constructor() {
-        super();
-        console.log('whors');
+    constructor(props) {
+        super(props);
+        this.toDos = [{
+        time: {
+            value: "1:30",
+            surfix: 'PM'
+        },
+        title: {
+            main: "New Icons",
+            sub: 'Mobile App'
+        },
+},{
+        time: {
+            value: "2:30",
+            surfix: 'PM'
+        },
+        title: {
+            main: "Design Stand Up",
+            sub: 'Hangouts'
+        },
+},{
+        time: {
+            value: "3:30",
+            surfix: 'PM'
+        },
+        title: {
+            main: "Finish Home Screen",
+            sub: 'Web App'
+        },
+}];
+        this.ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2
+        });
+        this.state = {
+            dataSource: this.ds.cloneWithRows([{
+        time: {
+            value: "1:30",
+            surfix: 'PM'
+        },
+        title: {
+            main: "New Icons",
+            sub: 'Mobile App'
+        },
+},{
+        time: {
+            value: "2:30",
+            surfix: 'PM'
+        },
+        title: {
+            main: "Design Stand Up",
+            sub: 'Hangouts'
+        },
+},{
+        time: {
+            value: "3:30",
+            surfix: 'PM'
+        },
+        title: {
+            main: "Finish Home Screen",
+            sub: 'Web App'
+        },
+}])
+        }
     }
+  
+
+
   render() {
-      API.addTodo("Sam","sfafsaf");
+     
     return (
       
   <View style={styles.container}>
@@ -47,21 +116,16 @@ class Month extends Component {
         
         </View>
         
-        <View style={styles.rowz}>
-                   <View style={{flexDirection:'row'}}><Text style={{fontSize:18, color:'#454449', margin:25, marginRight:3, alignSelf:'center'}}>2:30</Text>
-                       <Text style={{fontWeight:'100', color:'#454449', fontSize:11, alignSelf:'center',marginTop:5}}>PM</Text></View>
-                   <View>
-                           <Text style={{fontSize:16, color:'#454449', margin:25,marginBottom:3, alignSelf:'flex-start'}}>New Icons</Text>
-                           <Text style={{fontSize:16,color:'#A7A7A7', margin:25, marginTop:0, alignSelf:'center'}}>Mobile App</Text>
-                           </View>
-                   <View style={{flexDirection:'row',}}><Image source={require('image!green')} resizeMode={'contain'} style={{width:10, alignSelf:'center', margin:25,}}/>
-                               </View>
-                   </View>
-    <TodoTab 
-time ={{value:"HI", surfix:'PM'}}
-title={{main:"", sub:'hhafad'}}
     
-    />
+
+    <ListView
+        dataSource={this.state.dataSource}
+        renderRow={TodoTab}
+      renderRow={(rowData) => <TodoTab 
+todoProps={rowData}
+    
+    />}
+      />
        
       </View>                  
     );

@@ -43,6 +43,7 @@ class Overview extends Component {
            tabBarPosition = "top"
         style={{color:'#fff', backgroundColor:'#333'}}
         tabBarInactiveTextColor="white"
+       
            >
         <Login tabLabel="DAY"    />
         <Login  tabLabel="WEEK" tabBarInactiveTextColor="white" />
