@@ -54,7 +54,7 @@ class Overview extends Component {
             if(x.done){
              return ({text:{color:'#AEAEAE'},indie:{backgroundColor:'#50D5C4', flex:1, alignItems:'center', justifyContent:'center'}});
             } else{
-                return ({text:{color:'#505050'},indie:{backgroundColor:'#f5f5f5', flex:1, alignItems:'center', justifyContent:'center'}});
+                return ({text:{color:'#505050'},indie:{backgroundColor:'#F8F8FA', flex:1, alignItems:'center', justifyContent:'center'}});
             
             }
              
@@ -62,11 +62,11 @@ class Overview extends Component {
          // Theses are the individual slides
     return(
         
-    <View style={{height:80, flexDirection:'row', borderBottomWidth:1, borderBottomColor:'#d3d3d3'}}>
+    <View style={{height:70, flexDirection:'row', borderBottomWidth:1, borderBottomColor:'#F4F4F4'}}>
         <View style={isDone().indie}>
-        <Icon name="ios-checkmark-empty" size={32} color="#f5f5f5"/>
+        <Icon name="ios-checkmark-empty" size={32} color="#F8F8FA"/>
         </View>
-       <View style={{flex:3, backgroundColor:'#fff', justifyContent:'center', padding:25}}>
+       <View style={{flex:4, backgroundColor:'#fff', justifyContent:'center', padding:25}}>
         <Text style={{fontSize:14, textAlign:'left',},isDone().text}>{x.title}</Text>
       
         </View>
@@ -77,7 +77,7 @@ class Overview extends Component {
     
     badge(){
     return(
-    <Image />
+    <Image source={require('image!badgeList')} style={{height:200}} />
     )
     }
     
