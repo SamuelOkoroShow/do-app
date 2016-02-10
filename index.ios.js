@@ -2,7 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-var Login =  require("./App/Components/groups");
+var Login =  require("./App/Components/lists");
 
 'use strict';
 import React, {

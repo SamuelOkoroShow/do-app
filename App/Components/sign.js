@@ -15,7 +15,7 @@ from 'react-native';
 class Sign extends Component {
     constructor() {
         super();
-        console.log('whors');
+     
     }
   render() {
     return (

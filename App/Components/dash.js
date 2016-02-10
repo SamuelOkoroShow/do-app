@@ -16,7 +16,7 @@ import Swiper from 'react-native-swiper'
 class Walk extends Component {
     constructor() {
         super();
-        console.log('whors');
+       
     }
   render() {
     return (
