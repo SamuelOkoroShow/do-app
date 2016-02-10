@@ -12,25 +12,30 @@ import React, {
 from 'react-native';
 
 var Nav = require("./Helpers/nav");
+var Icon = require('react-native-vector-icons/Ionicons');
 
 var groupData = [
     {
-        title: 'Food',
-        sub: 'NEED TO BUY',
-        image: 'http://unappers.com/bread.jpg'
+        title: 'Design new icons',
+        done: true
     }, {
-        title: 'Work',
-        sub: 'FREELANCE PROJECTS',
-        image: 'http://unappers.com/chair.jpg'
+       title: 'Work on UI Kit',
+        done: false
     }, {
-        title: 'Vacation',
-        sub: 'FAVORITE PLACES',
-        image: 'http://unappers.com/cali.jpg'
+        title: 'Read Article: "Design For Mobile"',
+       done:false
     }, {
-        title: 'Cities',
-        sub: 'WANT TO VISIT',
-        image: 'http://unappers.com/work.jpg'
-    }
+        title: 'Revise wireframes',
+        done: true
+    },
+    {
+        title: 'Catch Up with Mary',
+        done: false
+    },{
+        title: 'Design explorations for new project',
+        done: false
+    },
+    
 ];
 class Overview extends Component {
     constructor() {
@@ -43,26 +48,45 @@ class Overview extends Component {
         }
     }
         
-    rowView(x){
+    rowView(x) {
+
+         var isDone = function () {
+            if(x.done){
+             return ({text:{color:'#AEAEAE'},indie:{backgroundColor:'#50D5C4', flex:1, alignItems:'center', justifyContent:'center'}});
+            } else{
+                return ({text:{color:'#505050'},indie:{backgroundColor:'#f5f5f5', flex:1, alignItems:'center', justifyContent:'center'}});
+            
+            }
+             
+         }
+         // Theses are the individual slides
     return(
         
     <View style={{height:80, flexDirection:'row', borderBottomWidth:1, borderBottomColor:'#d3d3d3'}}>
-        <Image style={{flex:1, width:null, height:null}} 
-        source={{uri: x.image}}
-        />
-       <View style={{flex:3, backgroundColor:'#f4f4f4', justifyContent:'center', padding:25}}>
-        <Text style={{fontSize:20, textAlign:'left',}}>{x.title}</Text>
-        <Text style={{color:'#888', fontSize:10}}>{x.sub}</Text>
+        <View style={isDone().indie}>
+        <Icon name="ios-checkmark-empty" size={32} color="#f5f5f5"/>
+        </View>
+       <View style={{flex:3, backgroundColor:'#fff', justifyContent:'center', padding:25}}>
+        <Text style={{fontSize:14, textAlign:'left',},isDone().text}>{x.title}</Text>
+      
         </View>
        
         </View>
     );
     }
     
+    badge(){
+    return(
+    <Image />
+    )
+    }
+    
+        // This is the main Render Method
     render(){
     return(
     <View style={styles.container}>
         <Nav />
+        {this.badge()}
         <ListView
         automaticallyAdjustContentInsets={false}
         dataSource={this.state.dataSource}
