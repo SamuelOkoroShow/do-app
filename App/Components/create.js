@@ -39,7 +39,9 @@ class Create extends Component {
         <View style={{flex:1, justifyContent:'space-between',}}>
     <Nav title={{val:'Create New'}}/>
         {this.badge()}
-    <ScrollView style={{flex:2,}}>
+    <ScrollView style={{flex:2,}}
+        automaticallyAdjustContentInsets={false}
+        >
      <View style={{height:80, alignItems:'center', borderBottomWidth:1, borderBottomColor:'#f3f3f3', flexDirection:'row', justifyContent:'space-between'}}>
          
         <View><Text style={{color:'#B0B0B0', marginLeft:10, marginBottom:5}}>
@@ -85,7 +87,7 @@ class Create extends Component {
         </View>
         </View>
         </ScrollView>
-        <View style={{height:50, backgroundColor:'#6563A4',alignItems:'center',justifyContent:'center'}}>
+        <View style={{height:60, backgroundColor:'#6563A4',alignItems:'center',justifyContent:'center'}}>
               <Icon name="ios-checkmark-empty" size={35} color="#fff" 
         style={{marginRight:20}}
         /> 
