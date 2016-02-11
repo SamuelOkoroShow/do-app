@@ -6,7 +6,8 @@ import React, {
     Text,
     TextInput,
     TouchableWithoutFeedback,
-    View
+    View,
+    ScrollView
 }
 from 'react-native';
 
@@ -21,8 +22,8 @@ class Create extends Component {
     
     badge(){
     return(
-        <View style={{flex:1,height:200}}>
-    <View style={{flex:1,height:null,width:null, alignItems:'center', backgroundColor:'#f8f8f9', justifyContent:'center'}}>
+        <View style={{flex:1}}>
+    <View style={{flex:1, alignItems:'center', backgroundColor:'#f8f8f9', justifyContent:'center'}}>
         <Text style={{color:'#444', fontWeight:'200', backgroundColor:'rgba(0,0,0,0)',fontSize:35,}}>Add Title</Text>
         <Text style={{color:'#bcbcbe',fontSize:11,backgroundColor:'rgba(0,0,0,0)'}}>ADD DESCRIPTION</Text>
         </View>
@@ -35,10 +36,12 @@ class Create extends Component {
     
     render(){
     return(
-        <View>
+        <View style={{flex:1, justifyContent:'space-between',}}>
     <Nav title={{val:'Create New'}}/>
         {this.badge()}
+    <ScrollView style={{flex:2,}}>
      <View style={{height:80, alignItems:'center', borderBottomWidth:1, borderBottomColor:'#f3f3f3', flexDirection:'row', justifyContent:'space-between'}}>
+         
         <View><Text style={{color:'#B0B0B0', marginLeft:10, marginBottom:5}}>
         Date
         </Text>
@@ -69,7 +72,7 @@ class Create extends Component {
         style={{marginRight:20}}
         /> 
         </View>
-        <View style={{height:80, alignItems:'center', borderBottomWidth:1, borderBottomColor:'#f3f3f3', flexDirection:'row', justifyContent:'space-between'}}>
+        <View style={{height:70, alignItems:'center', borderBottomWidth:1, borderBottomColor:'#f3f3f3', flexDirection:'row', justifyContent:'space-between'}}>
         <View><Text style={{color:'#B0B0B0', marginLeft:10, marginBottom:5}}>
         Repeat
         </Text>
@@ -81,7 +84,12 @@ class Create extends Component {
         <Text style={{color:'#B0B0B0',marginLeft:10}}>Add People</Text>
         </View>
         </View>
-        
+        </ScrollView>
+        <View style={{height:50, backgroundColor:'#6563A4',alignItems:'center',justifyContent:'center'}}>
+              <Icon name="ios-checkmark-empty" size={35} color="#fff" 
+        style={{marginRight:20}}
+        /> 
+            </View>
 </View>
     );
     }
