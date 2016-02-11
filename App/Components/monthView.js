@@ -122,7 +122,7 @@ class Month extends Component {
         dataSource={this.state.dataSource}
         renderRow={TodoTab}
       renderRow={(rowData) => <TodoTab 
-todoProps={rowData}
+todoProps={rowData}}
     
     />}
       />

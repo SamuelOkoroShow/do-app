@@ -77,7 +77,12 @@ class Overview extends Component {
     
     badge(){
     return(
-    <Image source={require('image!badgeList')} style={{height:200}} />
+        <View style={{height:200}}>
+    <Image source={require('image!badgeList')} style={{flex:1,height:null,width:null, alignItems:'center', justifyContent:'center'}}>
+        <Text style={{color:'#fff', backgroundColor:'rgba(0,0,0,0)',fontSize:35,}}>Work</Text>
+        <Text style={{color:'#fff',backgroundColor:'rgba(0,0,0,0)'}}>Freelance Projects</Text>
+        </Image>
+        </View>
     )
     }
     

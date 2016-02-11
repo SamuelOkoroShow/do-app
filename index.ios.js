@@ -2,7 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-var Login =  require("./App/Components/lists");
+var Login =  require("./App/Components/create");
 
 'use strict';
 import React, {
