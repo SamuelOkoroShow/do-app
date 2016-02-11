@@ -90,7 +90,7 @@ class Overview extends Component {
     render(){
     return(
     <View style={styles.container}>
-        <Nav />
+        <Nav title = {val:'Lists'}/>
         {this.badge()}
         <ListView
         automaticallyAdjustContentInsets={false}

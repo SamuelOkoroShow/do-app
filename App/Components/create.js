@@ -17,11 +17,29 @@ class Create extends Component {
         super();
        
     }
+    
+    badge(){
+    return(
+        <View style={{height:200}}>
+    <View style={{flex:1,height:null,width:null, alignItems:'center', backgroundColor:'#f8f8f9', justifyContent:'center'}}>
+        <Text style={{color:'#444', fontWeight:'200', backgroundColor:'rgba(0,0,0,0)',fontSize:35,}}>Add Title</Text>
+        <Text style={{color:'#bcbcbe',fontSize:11,backgroundColor:'rgba(0,0,0,0)'}}>ADD DESCRIPTION</Text>
+        </View>
+        </View>
+    )
+    }
+    
     render(){
     return(
-    <Nav title={"Create New"}/>
+        <View>
+    <Nav title={{val:'Create New'}}/>
+        {this.badge()}
+</View>
     );
     }
+    
+        
+    
     
 }
 

@@ -26,7 +26,7 @@ return(
   <View style={styles.title}>
         <View style={{flexDirection:'row'}}>
         <Image source={require('image!menu')} resizeMode={'contain'} style={styles.menu}/>
-        <Text style={styles.titleTxt}>{this.props.title}</Text>
+        <Text style={styles.titleTxt}>{this.props.title.val}</Text>
         </View>
         <View style={{flexDirection:'row'}}>
             <Icon name="ios-plus-empty" size={27} color="#999" style={{margin:10, alignSelf:'center'}} /> 
@@ -35,7 +35,12 @@ return(
         </View>
            </View>
 );
-}}
+}
+
+
+
+
+}
    Nav.propTypes = {
         title: React.PropTypes.object.isRequired,
         
