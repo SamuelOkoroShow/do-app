@@ -71,7 +71,9 @@ const styles = StyleSheet.create({
     },
     taskBig: {
         color: '#fff',
-        fontSize: 29
+        fontSize: 32,
+        margin:10,
+        fontWeight:'300'
     },
     taskBox: {
         alignItems: 'center',

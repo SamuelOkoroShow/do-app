@@ -119,6 +119,7 @@ class Month extends Component {
     
 
     <ListView
+        automaticallyAdjustContentInsets={false}
         dataSource={this.state.dataSource}
         renderRow={TodoTab}
       renderRow={(rowData) => <TodoTab 
@@ -133,8 +134,7 @@ todoProps={rowData}}
 }const styles = StyleSheet.create({
     container: {
         flex: 1,
-        width: null,
-        height: null
+      
     },
     cal: {
         width: 160,
