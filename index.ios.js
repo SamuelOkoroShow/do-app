@@ -2,7 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-var Login =  require("./App/Components/profile");
+var Login =  require("./App/Components/timeline");
 
 'use strict';
 import React, {
@@ -25,7 +25,7 @@ class do_2 extends Component {
          initialRoute={{
          component: Login,
         title: '',
-      
+
       }}
     />
     );
@@ -35,8 +35,8 @@ class do_2 extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-      
-      
+
+
     },
     welcome: {
         fontSize: 20,

@@ -6,7 +6,7 @@ import React, {
     StyleSheet,
     Image,
     Text,
-        ListView,
+    ListView,
     View
 }
 from 'react-native';
@@ -58,16 +58,16 @@ var toDos = [{
 class Profile extends Component {
     constructor() {
         super();
-        
+
         this.ds = new ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2
         });
          this.state = {
             dataSource: this.ds.cloneWithRows(toDos)
          }
-        
+
     }
-    
+
     badge(){
     return(
     <View style={styles.badge}>
@@ -78,7 +78,7 @@ class Profile extends Component {
     );
     }
 
-    
+
     render(){
     return(
         <View style={styles.container}>
@@ -88,16 +88,17 @@ class Profile extends Component {
         <ListView
         dataSource={this.state.dataSource}
        automaticallyAdjustContentInsets={false}
+       style = {{margin:5}}
         renderRow={Todos}
-      renderRow={(rowData) => 
-                 <Todos 
+      renderRow={(rowData) =>
+                 <Todos
 todoProps={rowData}/>} />
-        
+
         </View>
     );
     }
 }
-        
+
     const styles = StyleSheet.create({
         container: {
             flex: 1,
