@@ -26,9 +26,9 @@ class Timeline extends Component {
     }
 badge(){
   return(<View style={styles.badge}>
-      <Image source = {profileImg} style={{height:70, margin:10}} resizeMode='contain' />
-      <Text style={{color:'#fff',margin:5, backgroundColor:'rgba(0,0,0,0)', fontSize:25, fontWeight:'300'}}>February</Text>
-      <Text style={{color:'#fff', margin:5,backgroundColor:'rgba(0,0,0,0)', fontSize:15}}>69 EVENTS</Text>
+      <Image source = {profileImg} style={{height:75, margin:10}} resizeMode='contain' />
+      <Text style={{color:'#fff',margin:5, backgroundColor:'rgba(0,0,0,0)', fontSize:26, fontWeight:'300'}}>February</Text>
+      <Text style={{color:'#fff', margin:5,backgroundColor:'rgba(0,0,0,0)', fontSize:12}}>69 EVENTS</Text>
       </View>);
 }
 
@@ -39,10 +39,10 @@ return(
   <Image
     source={require('image!header')}
     resizeMode={'cover'}
-    style ={{flex:1, width:null, height:null}}>
+    style ={{flex:2, width:null, height:null}}>
 {this.badge()}
 </Image>
-<View style={{flex:2}}></View>
+<View style={{flex:4}}></View>
 </View>
 );
 
