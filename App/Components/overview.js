@@ -1,12 +1,10 @@
 
 'use strict';
 import React, {
-    AppRegistry,
     Component,
     StyleSheet,
     Image,
     Text,
-    TextInput,
     TouchableWithoutFeedback,
     View
 }
