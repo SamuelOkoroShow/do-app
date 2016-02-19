@@ -2,7 +2,7 @@ To Do App
 ==============
 
 
-View the main application designs right <a href="www.invisionapp.com/do">here</a>
+View the main application designs right <a href="http://www.invisionapp.com/do">here</a>
 
 # How to use
 - From the command terminal 
